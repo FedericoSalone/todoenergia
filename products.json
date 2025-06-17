@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "title": "Batería Solar Quantum X",
+        "category": "baterías",
+        "price": 899,
+        "description": "Batería de litio de última generación con capacidad de 10kWh y sistema de gestión inteligente.",
+        "image": "https://plus.unsplash.com/premium_photo-1716762544373-77789a03d6c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0ZXJpYSUyMHNvbGFyfGVufDB8fDB8fHww"
+    },
+    {
+        "id": 2,
+        "title": "Panel Solar Hologrid 500W",
+        "category": "paneles",
+        "price": 499,
+        "description": "Panel solar de alta eficiencia con tecnología holográfica que aumenta la captación de luz.",
+        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 3,
+        "title": "Inversor Híbrido Nexus Pro",
+        "category": "inversores",
+        "price": 1299,
+        "description": "Inversor híbrido inteligente con conexión a red y respaldo de batería integrado.",
+        "image": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 4,
+        "title": "Controlador de Carga MPPT 100A",
+        "category": "accesorios",
+        "price": 349,
+        "description": "Controlador de carga MPPT de alta eficiencia con monitoreo remoto y seguimiento máximo de potencia.",
+        "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 5,
+        "title": "Kit Solar Residencial 5kW",
+        "category": "kits",
+        "price": 4599,
+        "description": "Kit completo para instalación solar residencial con todos los componentes necesarios.",
+        "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 6,
+        "title": "Batería Solar EcoFlow Delta",
+        "category": "baterías",
+        "price": 1599,
+        "description": "Batería portátil de alta capacidad con salida CA integrada y carga solar rápida.",
+        "image": "https://plus.unsplash.com/premium_photo-1716762544373-77789a03d6c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0ZXJpYSUyMHNvbGFyfGVufDB8fDB8fHww"
+    },
+    {
+        "id": 7,
+        "title": "Panel Solar FlexiSun 350W",
+        "category": "paneles",
+        "price": 399,
+        "description": "Panel solar flexible ideal para superficies irregulares o móviles.",
+        "image": "https://cdn.pixabay.com/photo/2016/09/02/22/33/light-bulb-1640438_640.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Inversor Off-Grid PowerMax 3000W",
+        "category": "inversores",
+        "price": 899,
+        "description": "Inversor para sistemas aislados con alta eficiencia y protección integrada.",
+        "image": "https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 9,
+        "title": "Sistema de Monitoreo Solar",
+        "category": "accesorios",
+        "price": 199,
+        "description": "Monitor en tiempo real del rendimiento de tu sistema solar con app móvil.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 10,
+        "title": "Kit Solar Comercial 20kW",
+        "category": "kits",
+        "price": 12999,
+        "description": "Sistema completo para negocios con alta demanda energética.",
+        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 11,
+        "title": "Batería de Gel DeepCycle 200Ah",
+        "category": "baterías",
+        "price": 599,
+        "description": "Batería de ciclo profundo ideal para sistemas solares off-grid.",
+        "image": "https://images.unsplash.com/photo-1605980776566-0486c3ac7617?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 12,
+        "title": "Panel Solar Monocristalino 450W",
+        "category": "paneles",
+        "price": 449,
+        "description": "Alta eficiencia en espacios reducidos con tecnología monocristalina.",
+        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+    }
+]
