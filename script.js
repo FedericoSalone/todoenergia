@@ -1,9 +1,10 @@
 // Variables del DOM
 const productsGrid = document.getElementById('productsGrid');
 const loadMoreBtn = document.getElementById('loadMore');
-let visibleProducts = 8; // Cambiado de 6 a 8 productos iniciales
+let visibleProducts = 8;
 let allProducts = [];
 let isLoading = false;
+let currentImageModal = null;
 
 // Función para cargar productos desde JSON
 async function loadProducts() {
@@ -16,11 +17,8 @@ async function loadProducts() {
             </div>
         `;
         
-        // Simular carga desde un archivo JSON externo
         const response = await fetch('products.json');
-        if (!response.ok) {
-            throw new Error('Error al cargar los productos');
-        }
+        if (!response.ok) throw new Error('Error al cargar los productos');
         
         allProducts = await response.json();
         renderProducts(visibleProducts);
@@ -36,12 +34,201 @@ async function loadProducts() {
     }
 }
 
+// Función para crear el modal de imágenes y video
+function createImageModal(images, title, video = null) {
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+    
+    // Crear pestañas
+    let tabsHTML = '';
+    let contentHTML = '';
+    
+    if (video) {
+        tabsHTML = `
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="images">Imágenes</button>
+                <button class="tab-btn" data-tab="video">Video</button>
+            </div>
+        `;
+        
+        contentHTML = `
+            <div class="tab-content active" id="images-tab">
+                <div class="main-image-container">
+                    <img src="${images[0]}" alt="${title}" class="main-image">
+                    <div class="zoom-area"></div>
+                </div>
+                <div class="thumbnail-container">
+                    ${images.map((img, index) => `
+                        <img src="${img}" alt="${title} - thumbnail ${index + 1}" 
+                             class="thumbnail ${index === 0 ? 'active' : ''}"
+                             data-index="${index}">
+                    `).join('')}
+                </div>
+            </div>
+            <div class="tab-content" id="video-tab">
+                <div class="video-container">
+                    <iframe width="100%" height="500" src="${video}" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        `;
+    } else {
+        contentHTML = `
+            <div class="main-image-container">
+                <img src="${images[0]}" alt="${title}" class="main-image">
+                <div class="zoom-area"></div>
+            </div>
+            <div class="thumbnail-container">
+                ${images.map((img, index) => `
+                    <img src="${img}" alt="${title} - thumbnail ${index + 1}" 
+                         class="thumbnail ${index === 0 ? 'active' : ''}"
+                         data-index="${index}">
+                `).join('')}
+            </div>
+        `;
+    }
+
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            ${tabsHTML}
+            ${contentHTML}
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    return modal;
+}
+
+// Función para inicializar eventos del modal
+function initModalEvents(modal, images, video = null) {
+    const closeBtn = modal.querySelector('.close-modal');
+    
+    // Cerrar modal
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        currentImageModal = null;
+    });
+    
+    // Cerrar al hacer clic fuera del contenido
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            currentImageModal = null;
+        }
+    });
+    
+    // Manejar pestañas si hay video
+    if (video) {
+        const tabBtns = modal.querySelectorAll('.tab-btn');
+        const tabContents = modal.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remover clase active de todos los botones y contenidos
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Agregar clase active al botón y contenido seleccionado
+                btn.classList.add('active');
+                const tabId = btn.dataset.tab;
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+    }
+    
+    // Configurar zoom solo para la pestaña de imágenes
+    if (images.length > 0) {
+        const mainImage = modal.querySelector('.main-image');
+        const thumbnails = modal.querySelectorAll('.thumbnail');
+        const zoomArea = modal.querySelector('.zoom-area');
+        
+        // Cambiar imagen al hacer clic en thumbnail
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const index = thumb.dataset.index;
+                mainImage.src = images[index];
+                
+                // Actualizar thumbnails activos
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            });
+        });
+        
+        // Zoom con la rueda del mouse
+        let scale = 1;
+        mainImage.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = -e.deltaY;
+            
+            if (delta > 0) {
+                scale *= 1.1;
+            } else {
+                scale /= 1.1;
+            }
+            
+            // Limitar zoom mínimo y máximo
+            scale = Math.min(Math.max(1, scale), 4);
+            mainImage.style.transform = `scale(${scale})`;
+        });
+        
+        // Mostrar área de zoom al pasar el mouse
+        mainImage.addEventListener('mousemove', (e) => {
+            if (scale <= 1) return;
+            
+            const rect = mainImage.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calcular posición del zoom
+            const xPercent = (x / rect.width) * 100;
+            const yPercent = (y / rect.height) * 100;
+            
+            zoomArea.style.display = 'block';
+            zoomArea.style.left = `${xPercent}%`;
+            zoomArea.style.top = `${yPercent}%`;
+            zoomArea.style.transform = 'translate(-50%, -50%)';
+        });
+        
+        mainImage.addEventListener('mouseleave', () => {
+            zoomArea.style.display = 'none';
+        });
+        
+        // Resetear zoom al cambiar de imagen
+        mainImage.addEventListener('load', () => {
+            scale = 1;
+            mainImage.style.transform = 'scale(1)';
+        });
+    }
+}
+
+// Función para mostrar el modal de imágenes/video
+function showImageModal(product) {
+    // Cerrar modal existente si hay uno
+    if (currentImageModal) {
+        currentImageModal.style.display = 'none';
+        document.body.removeChild(currentImageModal);
+    }
+    
+    // Obtener imágenes (compatibilidad con version anterior)
+    const images = Array.isArray(product.image) ? product.image : [product.image];
+    
+    // Crear nuevo modal
+    const modal = createImageModal(images, product.title, product.video || null);
+    initModalEvents(modal, images, product.video || null);
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    currentImageModal = modal;
+}
+
 // Función para renderizar productos
 function renderProducts(productsToShow) {
-    // Limpiar el grid
     productsGrid.innerHTML = '';
     const fragment = document.createDocumentFragment(); 
-    // Mostrar solo la cantidad especificada
     const productsToDisplay = allProducts.slice(0, productsToShow);
     
     if (productsToDisplay.length === 0) {
@@ -49,30 +236,43 @@ function renderProducts(productsToShow) {
         return;
     }
     
-    // Crear tarjetas de producto
     productsToDisplay.forEach((product, index) => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.style.animationDelay = `${index * 0.1}s`;
-        fragment.appendChild(productCard);
+        
+        // Verificar si el producto tiene múltiples imágenes
+        const images = Array.isArray(product.image) ? product.image : [product.image];
+        
+        // HTML condicional para el indicador de video
+        const videoIndicator = product.video ? 
+            '<div class="video-indicator">🎥 Video disponible</div>' : '';
+        
         productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.title}" class="product-image">
+            <div class="product-image-container">
+                <img src="${images[0]}" alt="${product.title}" class="product-image">
+                ${images.length > 1 ? `<div class="image-counter">+${images.length - 1}</div>` : ''}
+                ${product.video ? '<div class="video-badge"><i class="fas fa-video"></i></div>' : ''}
+            </div>
             <div class="product-info">
                 <span class="product-category">${product.category}</span>
                 <h3 class="product-title">${product.title}</h3>
                 <p class="product-description">${product.description}</p>
+                ${videoIndicator}
             </div>
         `;
         
-        productsGrid.appendChild(productCard);
+        // Agregar evento para mostrar el modal
+        const imageContainer = productCard.querySelector('.product-image-container');
+        imageContainer.addEventListener('click', () => {
+            showImageModal(product);
+        });
+        
+        fragment.appendChild(productCard);
     });
     
-    // Mostrar u ocultar botón "Cargar más"
-    if (allProducts.length > visibleProducts) {
-        loadMoreBtn.style.display = 'flex';
-    } else {
-        loadMoreBtn.style.display = 'none';
-    }
+    productsGrid.appendChild(fragment);
+    loadMoreBtn.style.display = allProducts.length > visibleProducts ? 'flex' : 'none';
 }
 
 // Evento para cargar más productos
@@ -82,7 +282,7 @@ loadMoreBtn.addEventListener('click', async () => {
     isLoading = true;
     loadMoreBtn.classList.add('loading');
     
-    // Simular carga con timeout (en producción esto sería una llamada API)
+    // Simular carga
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     visibleProducts += 8; 
@@ -92,9 +292,9 @@ loadMoreBtn.addEventListener('click', async () => {
     loadMoreBtn.classList.remove('loading');
 });
 
-// Inicializar partículas y cargar productos
+// Inicializar la aplicación
 document.addEventListener('DOMContentLoaded', () => {
-    // Configuración de partículas
+    // Configurar partículas si la librería está disponible
     if (window.particlesJS) {
         particlesJS('particles', {
             particles: {
@@ -154,16 +354,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Cargar productos
-    loadProducts();
-});
-
-// Efecto de scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    // Configurar smooth scrolling para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
+    
+    // Cargar productos
+    loadProducts();
 });

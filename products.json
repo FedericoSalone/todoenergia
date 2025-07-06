@@ -1,98 +1,150 @@
 [
     {
         "id": 1,
-        "title": "Batería Solar Quantum X",
-        "category": "baterías",
-        "price": 899,
-        "description": "Batería de litio de última generación con capacidad de 10kWh y sistema de gestión inteligente.",
-        "image": "https://plus.unsplash.com/premium_photo-1716762544373-77789a03d6c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0ZXJpYSUyMHNvbGFyfGVufDB8fDB8fHww"
+        "title": "Laptop Quantum X",
+        "category": "computación",
+        "description": "Ultraportátil con pantalla táctil 4K y 18h batería",
+        "image": [
+            "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&w=500"
+        ],
+        "video": "https://www.youtube-nocookie.com/embed/9bZkp7q19f0?rel=0",
+        "features": ["Pantalla 14\" 4K", "32GB RAM", "1TB SSD"]
     },
     {
         "id": 2,
-        "title": "Panel Solar Hologrid 500W",
-        "category": "paneles",
-        "price": 499,
-        "description": "Panel solar de alta eficiencia con tecnología holográfica que aumenta la captación de luz.",
-        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Smartphone Nebula Pro",
+        "category": "móviles",
+        "description": "Pantalla plegable con cámara de 200MP",
+        "image": [
+            "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1567578923208-5cc60003892d?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&w=500"
+        ],
+        "features": ["Cámara 200MP", "Carga 100W", "IP68"]
     },
     {
         "id": 3,
-        "title": "Inversor Híbrido Nexus Pro",
-        "category": "inversores",
-        "price": 1299,
-        "description": "Inversor híbrido inteligente con conexión a red y respaldo de batería integrado.",
-        "image": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Tablet Vision S",
+        "category": "tablets",
+        "description": "Pantalla OLED 120Hz con lápiz háptico",
+        "image": [
+            "https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1526430752879-b9eb53fbd772?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&w=500"
+        ],
+        "video": "https://www.youtube-nocookie.com/embed/XIMLoLxmTDw?rel=0",
+        "features": ["12.9\" OLED", "Lápiz háptico", "16GB RAM"]
     },
     {
         "id": 4,
-        "title": "Controlador de Carga MPPT 100A",
-        "category": "accesorios",
-        "price": 349,
-        "description": "Controlador de carga MPPT de alta eficiencia con monitoreo remoto y seguimiento máximo de potencia.",
-        "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Smartwatch Health X",
+        "category": "wearables",
+        "description": "Monitor de salud con ECG y oxímetro",
+        "image": [
+            "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?ixlib=rb-1.2.1&w=500"
+        ],
+        "features": ["ECG médico", "Oxímetro", "30 días batería"]
     },
     {
         "id": 5,
-        "title": "Kit Solar Residencial 5kW",
-        "category": "kits",
-        "price": 4599,
-        "description": "Kit completo para instalación solar residencial con todos los componentes necesarios.",
-        "image": "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Auriculares Atmos 360",
+        "category": "audio",
+        "description": "Sonido espacial con cancelación de ruido",
+        "image": [
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1578319439584-104c94b5b0f3?ixlib=rb-1.2.1&w=500"
+        ],
+        "video": "https://www.youtube-nocookie.com/embed/VqPk5mVX9FI?rel=0",
+        "features": ["Sonido 360°", "40h autonomía", "Carga rápida"]
     },
     {
         "id": 6,
-        "title": "Batería Solar EcoFlow Delta",
-        "category": "baterías",
-        "price": 1599,
-        "description": "Batería portátil de alta capacidad con salida CA integrada y carga solar rápida.",
-        "image": "https://plus.unsplash.com/premium_photo-1716762544373-77789a03d6c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0ZXJpYSUyMHNvbGFyfGVufDB8fDB8fHww"
+        "title": "Cámara Photon Pro",
+        "category": "fotografía",
+        "description": "Cámara mirrorless 60MP con 8K RAW",
+        "image": [
+            "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1564466809058-bf4114d55352?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?ixlib=rb-1.2.1&w=500"
+        ],
+        "features": ["60MP", "8K RAW", "Estabilización 6 ejes"]
     },
     {
         "id": 7,
-        "title": "Panel Solar FlexiSun 350W",
-        "category": "paneles",
-        "price": 399,
-        "description": "Panel solar flexible ideal para superficies irregulares o móviles.",
-        "image": "https://cdn.pixabay.com/photo/2016/09/02/22/33/light-bulb-1640438_640.jpg"
+        "title": "Consola Neo VR",
+        "category": "gaming",
+        "description": "Realidad virtual 8K con seguimiento ocular",
+        "image": [
+            "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-1.2.1&w=500"
+        ],
+        "video": "https://www.youtube-nocookie.com/embed/RkC0l4iekYo?rel=0",
+        "features": ["VR 8K", "1200GB/s", "Compatibilidad universal"]
     },
     {
         "id": 8,
-        "title": "Inversor Off-Grid PowerMax 3000W",
-        "category": "inversores",
-        "price": 899,
-        "description": "Inversor para sistemas aislados con alta eficiencia y protección integrada.",
-        "image": "https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Monitor Curvo Infinity",
+        "category": "monitores",
+        "description": "Pantalla curva 40\" 8K 240Hz",
+        "image": [
+            "https://images.unsplash.com/photo-1546538915-a9e2c8d0a8df?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1551645120-d70bfe84c826?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1545156521-77bd85671d30?ixlib=rb-1.2.1&w=500"
+        ],
+        "features": ["40\" 8K", "240Hz", "Quantum Dot"]
     },
     {
         "id": 9,
-        "title": "Sistema de Monitoreo Solar",
-        "category": "accesorios",
-        "price": 199,
-        "description": "Monitor en tiempo real del rendimiento de tu sistema solar con app móvil.",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Teclado Holográfico",
+        "category": "periféricos",
+        "description": "Teclado con retroiluminación holográfica",
+        "image": [
+            "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1615663248957-c20f07c5a7c4?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1629654291661-754cb604f181?ixlib=rb-1.2.1&w=500"
+        ],
+        "features": ["Retroiluminación", "Switches ópticos", "Conexión triple"]
     },
     {
         "id": 10,
-        "title": "Kit Solar Comercial 20kW",
-        "category": "kits",
-        "price": 12999,
-        "description": "Sistema completo para negocios con alta demanda energética.",
-        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Disco Duro Quantum",
+        "category": "almacenamiento",
+        "description": "5TB Thunderbolt 4 con cifrado",
+        "image": [
+            "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1629196913083-6f1ff3b38f0b?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1599084993091-1cb5c0721a0e?ixlib=rb-1.2.1&w=500"
+        ],
+        "video": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0",
+        "features": ["5TB NVMe", "Thunderbolt 4", "Cifrado AES-256"]
     },
     {
         "id": 11,
-        "title": "Batería de Gel DeepCycle 200Ah",
-        "category": "baterías",
-        "price": 599,
-        "description": "Batería de ciclo profundo ideal para sistemas solares off-grid.",
-        "image": "https://images.unsplash.com/photo-1605980776566-0486c3ac7617?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Router Mesh Omega",
+        "category": "redes",
+        "description": "WiFi 6E mesh 10Gbps",
+        "image": [
+            "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1592890288564-7666a1db1128?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1581093057305-5e4393a1aef1?ixlib=rb-1.2.1&w=500"
+        ],
+        "features": ["WiFi 6E", "10Gbps", "32 dispositivos"]
     },
     {
         "id": 12,
-        "title": "Panel Solar Monocristalino 450W",
-        "category": "paneles",
-        "price": 449,
-        "description": "Alta eficiencia en espacios reducidos con tecnología monocristalina.",
-        "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+        "title": "Altavoz Atmosférico",
+        "category": "smart home",
+        "description": "Sistema 7.1.4 Dolby Atmos",
+        "image": [
+            "https://images.unsplash.com/photo-1547721064-da6cfb341d50?ixlib=rb-1.2.1&w=500",
+            "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-1.2.1&w=500"
+        ],
+        "features": ["Dolby Atmos", "800W RMS", "Multiroom"]
     }
 ]
